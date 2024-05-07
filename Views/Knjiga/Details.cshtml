@@ -1,0 +1,54 @@
+@model BiblioMeta.Models.Knjiga
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Knjiga</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Naslov)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Naslov)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StStrani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StStrani)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StZnakov)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StZnakov)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ZanrID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ZanrID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvtorID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvtorID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.KnjigaID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

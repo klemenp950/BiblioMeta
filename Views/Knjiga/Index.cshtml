@@ -1,0 +1,65 @@
+@model IEnumerable<BiblioMeta.Models.Knjiga>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naslov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StStrani)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StZnakov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZanrID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvtorID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naslov)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StStrani)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StZnakov)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZanrID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvtorID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.KnjigaID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.KnjigaID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.KnjigaID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

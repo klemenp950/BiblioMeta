@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kleme\\OneDrive - Univerza v Ljubljani\\Faks\\2. Letnik\\RIS\\BiblioMeta\\BiblioMeta.csproj": {}
+    "C:\\BiblioMeta\\BiblioMeta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kleme\\OneDrive - Univerza v Ljubljani\\Faks\\2. Letnik\\RIS\\BiblioMeta\\BiblioMeta.csproj": {
+    "C:\\BiblioMeta\\BiblioMeta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kleme\\OneDrive - Univerza v Ljubljani\\Faks\\2. Letnik\\RIS\\BiblioMeta\\BiblioMeta.csproj",
+        "projectUniqueName": "C:\\BiblioMeta\\BiblioMeta.csproj",
         "projectName": "BiblioMeta",
-        "projectPath": "C:\\Users\\kleme\\OneDrive - Univerza v Ljubljani\\Faks\\2. Letnik\\RIS\\BiblioMeta\\BiblioMeta.csproj",
+        "projectPath": "C:\\BiblioMeta\\BiblioMeta.csproj",
         "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kleme\\OneDrive - Univerza v Ljubljani\\Faks\\2. Letnik\\RIS\\BiblioMeta\\obj\\",
+        "outputPath": "C:\\BiblioMeta\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,22 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

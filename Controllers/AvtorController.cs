@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BiblioMeta.Data;
 using BiblioMeta.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BiblioMeta.Controllers
 {
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class AvtorController : Controller
     {
         private readonly Context _context;
@@ -66,6 +68,7 @@ namespace BiblioMeta.Controllers
         }
 
         // GET: Avtor/Edit/5
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +89,7 @@ namespace BiblioMeta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id, [Bind("AvtorID,Ime,Priimek")] Avtor avtor)
         {
             if (id != avtor.AvtorID)
@@ -117,6 +121,7 @@ namespace BiblioMeta.Controllers
         }
 
         // GET: Avtor/Delete/5
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +142,7 @@ namespace BiblioMeta.Controllers
         // POST: Avtor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var avtor = await _context.Avtor.FindAsync(id);

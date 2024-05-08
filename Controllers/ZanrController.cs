@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BiblioMeta.Data;
 using BiblioMeta.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BiblioMeta.Controllers
 {
+    [Authorize(Roles = "SuperAdmin")]
     public class ZanrController : Controller
     {
         private readonly Context _context;

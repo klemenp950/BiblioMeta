@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BiblioMeta.Data;
 using BiblioMeta.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BiblioMeta.Controllers
 {
+    [Authorize]
     public class KnjigaController : Controller
     {
         private readonly Context _context;

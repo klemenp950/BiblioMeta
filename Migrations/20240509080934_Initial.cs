@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BiblioMeta.Migrations
+namespace BiblioMeta2.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -35,7 +35,8 @@ namespace BiblioMeta.Migrations
                     StZnakov = table.Column<int>(type: "int", nullable: false),
                     Cena = table.Column<float>(type: "real", nullable: false),
                     ZanrID = table.Column<int>(type: "int", nullable: false),
-                    AvtorID = table.Column<int>(type: "int", nullable: false)
+                    AvtorID = table.Column<int>(type: "int", nullable: false),
+                    Besedilo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

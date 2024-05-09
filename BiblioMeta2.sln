@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblioMeta", "BiblioMeta.csproj", "{37B271F9-ADB9-4E9A-A036-7A328422C82F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblioMeta2", "BiblioMeta2.csproj", "{CA7E20CD-EA43-4DBE-85BC-9E76255F4B2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{37B271F9-ADB9-4E9A-A036-7A328422C82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37B271F9-ADB9-4E9A-A036-7A328422C82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37B271F9-ADB9-4E9A-A036-7A328422C82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37B271F9-ADB9-4E9A-A036-7A328422C82F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7E20CD-EA43-4DBE-85BC-9E76255F4B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7E20CD-EA43-4DBE-85BC-9E76255F4B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7E20CD-EA43-4DBE-85BC-9E76255F4B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7E20CD-EA43-4DBE-85BC-9E76255F4B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {36F6C674-6C1A-4AEB-B5A4-2F734A944EFA}
+		SolutionGuid = {4C7B3DAF-BB4D-43F2-8907-EF5FD27FAF39}
 	EndGlobalSection
 EndGlobal

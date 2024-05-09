@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\BiblioMeta\\BiblioMeta.csproj": {}
+    "C:\\BiblioMeta\\BiblioMeta2.csproj": {}
   },
   "projects": {
-    "C:\\BiblioMeta\\BiblioMeta.csproj": {
+    "C:\\BiblioMeta\\BiblioMeta2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\BiblioMeta\\BiblioMeta.csproj",
-        "projectName": "BiblioMeta",
-        "projectPath": "C:\\BiblioMeta\\BiblioMeta.csproj",
+        "projectUniqueName": "C:\\BiblioMeta\\BiblioMeta2.csproj",
+        "projectName": "BiblioMeta2",
+        "projectPath": "C:\\BiblioMeta\\BiblioMeta2.csproj",
         "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
         "outputPath": "C:\\BiblioMeta\\obj\\",
         "projectStyle": "PackageReference",
@@ -46,10 +46,6 @@
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.4, )"
-            },
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

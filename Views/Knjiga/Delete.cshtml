@@ -1,4 +1,4 @@
-@model BiblioMeta.Models.Knjiga
+@model BiblioMeta2.Models.Knjiga
 
 @{
     ViewData["Title"] = "Delete";
@@ -46,6 +46,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AvtorID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Besedilo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Besedilo)
         </dd>
     </dl>
     

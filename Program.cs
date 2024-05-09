@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using BiblioMeta.Data;
+using BiblioMeta2.Data;
 using Microsoft.AspNetCore.Identity;
-using BiblioMeta.Models;
+using BiblioMeta2.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
-var connectionString = builder.Configuration.GetConnectionString("Context");
+var connectionString = builder.Configuration.GetConnectionString("Baza");
 
 builder.Services.AddDbContext<Context>(options =>
             options.UseSqlServer(connectionString));

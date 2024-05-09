@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using BiblioMeta.Models;
+using BiblioMeta2.Models;
 
-namespace BiblioMeta.Controllers;
+namespace BiblioMeta2.Controllers;
 
 public class HomeController : Controller
 {

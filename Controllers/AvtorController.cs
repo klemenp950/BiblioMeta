@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BiblioMeta.Data;
-using BiblioMeta.Models;
+using BiblioMeta2.Data;
+using BiblioMeta2.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace BiblioMeta.Controllers
+
+namespace BiblioMeta2.Controllers
 {
     [Authorize(Roles = "Admin, SuperAdmin")]
     public class AvtorController : Controller

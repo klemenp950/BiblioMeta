@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace BiblioMeta.Models;
+namespace BiblioMeta2.Models;
 
 public class ApplicationUser : IdentityUser
 {

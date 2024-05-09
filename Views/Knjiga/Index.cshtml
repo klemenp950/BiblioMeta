@@ -1,4 +1,4 @@
-@model IEnumerable<BiblioMeta.Models.Knjiga>
+@model IEnumerable<BiblioMeta2.Models.KnjigaViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,19 +16,19 @@
                 @Html.DisplayNameFor(model => model.Naslov)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StStrani)
+                Število strani
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StZnakov)
+                Število znakov
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Cena)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ZanrID)
+                Žanr
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AvtorID)
+                Avtor
             </th>
             <th></th>
         </tr>
@@ -49,10 +49,10 @@
                 @Html.DisplayFor(modelItem => item.Cena)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ZanrID)
+                @Html.DisplayFor(modelItem => item.Zanr)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AvtorID)
+                @Html.DisplayFor(modelItem => item.AvtorIme)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.KnjigaID">Edit</a> |

@@ -1,4 +1,4 @@
-namespace BiblioMeta.Models;
+namespace BiblioMeta2.Models;
 
 public class ErrorViewModel
 {

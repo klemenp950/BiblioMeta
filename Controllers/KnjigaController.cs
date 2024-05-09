@@ -5,13 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BiblioMeta.Data;
-using BiblioMeta.Models;
+using BiblioMeta2.Data;
+using BiblioMeta2.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace BiblioMeta.Controllers
+
+namespace BiblioMeta2.Controllers
 {
     [Authorize]
+
     public class KnjigaController : Controller
     {
         private readonly Context _context;
@@ -24,7 +26,33 @@ namespace BiblioMeta.Controllers
         // GET: Knjiga
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Knjiga.ToListAsync());
+            var knjige = await _context.Knjiga.ToListAsync();
+
+            var knjigeViewModel = new List<KnjigaViewModel>(); // Ustvarite novo kolekcijo pogledov
+
+            foreach (var knjiga in knjige)
+            {
+                // Pridobite ime avtorja za vsako knjigo glede na AvtorID
+                var avtor = await _context.Avtor.FirstOrDefaultAsync(a => a.AvtorID == knjiga.AvtorID);
+                var zanr = await _context.Zanr.FirstOrDefaultAsync(a => a.ZanrID == knjiga.ZanrID);
+                if (avtor != null && zanr != null)
+                {
+                    knjigeViewModel.Add(new KnjigaViewModel
+                    {
+                        KnjigaID = knjiga.KnjigaID,
+                        Naslov = knjiga.Naslov,
+                        StZnakov = knjiga.StZnakov,
+                        StStrani = knjiga.StStrani,
+                        Cena = knjiga.Cena,
+                        ZanrID = knjiga.ZanrID,
+                        AvtorIme = avtor.Ime + " " + avtor.Priimek, 
+                        Zanr = zanr.ImeZanra
+                    });
+                }
+
+            }
+
+            return View(knjigeViewModel);
         }
 
         // GET: Knjiga/Details/5
@@ -48,6 +76,8 @@ namespace BiblioMeta.Controllers
         // GET: Knjiga/Create
         public IActionResult Create()
         {
+            ViewData["AvtorID"] = new SelectList(_context.Avtor, "AvtorID", "Ime");
+            ViewData["ZanrID"] = new SelectList(_context.Zanr, "ZanrID", "ImeZanra");
             return View();
         }
 
@@ -56,14 +86,20 @@ namespace BiblioMeta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("KnjigaID,Naslov,StStrani,StZnakov,Cena,ZanrID,AvtorID")] Knjiga knjiga)
-        {
+        public async Task<IActionResult> Create([Bind("KnjigaID,Naslov,Cena,ZanrID,AvtorID,Besedilo")] Knjiga knjiga){
             if (ModelState.IsValid)
             {
+                // Izračunaj število znakov in strani iz besedila knjige
+                knjiga.StZnakov = knjiga.Besedilo.Length;
+                knjiga.StStrani = (int)Math.Ceiling((double)knjiga.StZnakov / 400); // Predpostavka: 400 znakov na stran
+                knjiga.Cena = (float)(knjiga.StStrani * 0.01);
+
                 _context.Add(knjiga);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AvtorID"] = new SelectList(_context.Avtor, "AvtorID", "Ime", knjiga.AvtorID);
+            ViewData["ZanrID"] = new SelectList(_context.Zanr, "ZanrID", "ImeZanra", knjiga.ZanrID);
             return View(knjiga);
         }
 
@@ -80,6 +116,8 @@ namespace BiblioMeta.Controllers
             {
                 return NotFound();
             }
+            ViewData["AvtorID"] = new SelectList(_context.Avtor, "AvtorID", "Ime", knjiga.AvtorID);
+            ViewData["ZanrID"] = new SelectList(_context.Zanr, "ZanrID", "ImeZanra", knjiga.ZanrID);
             return View(knjiga);
         }
 
@@ -88,7 +126,7 @@ namespace BiblioMeta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("KnjigaID,Naslov,StStrani,StZnakov,Cena,ZanrID,AvtorID")] Knjiga knjiga)
+        public async Task<IActionResult> Edit(int id, [Bind("KnjigaID,Naslov,StStrani,StZnakov,Cena,ZanrID,AvtorID,Besedilo")] Knjiga knjiga)
         {
             if (id != knjiga.KnjigaID)
             {
@@ -115,6 +153,8 @@ namespace BiblioMeta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AvtorID"] = new SelectList(_context.Avtor, "AvtorID", "Ime", knjiga.AvtorID);
+            ViewData["ZanrID"] = new SelectList(_context.Zanr, "ZanrID", "ImeZanra", knjiga.ZanrID);
             return View(knjiga);
         }
 

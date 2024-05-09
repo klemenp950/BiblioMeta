@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\BiblioMeta\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BiblioMeta.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BiblioMeta.bundle.scp.css"
+      "Id": "C:\\BiblioMeta\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BiblioMeta2.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BiblioMeta2.bundle.scp.css"
     },
     {
       "Id": "C:\\BiblioMeta\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BiblioMeta.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BiblioMeta2.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BiblioMeta.props",
-      "PackagePath": "build\\BiblioMeta.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BiblioMeta2.props",
+      "PackagePath": "build\\BiblioMeta2.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BiblioMeta.props",
-      "PackagePath": "buildMultiTargeting\\BiblioMeta.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BiblioMeta2.props",
+      "PackagePath": "buildMultiTargeting\\BiblioMeta2.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BiblioMeta.props",
-      "PackagePath": "buildTransitive\\BiblioMeta.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BiblioMeta2.props",
+      "PackagePath": "buildTransitive\\BiblioMeta2.props"
     }
   ],
   "ElementsToRemove": []

@@ -1,4 +1,4 @@
-@model BiblioMeta.Models.Knjiga
+@model BiblioMeta2.Models.Knjiga
 
 @{
     ViewData["Title"] = "Edit";
@@ -19,6 +19,11 @@
                 <span asp-validation-for="Naslov" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Besedilo" class="control-label"></label>
+                <textarea asp-for="Besedilo" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="Besedilo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="StStrani" class="control-label"></label>
                 <input asp-for="StStrani" class="form-control" />
                 <span asp-validation-for="StStrani" class="text-danger"></span>
@@ -35,12 +40,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="ZanrID" class="control-label"></label>
-                <input asp-for="ZanrID" class="form-control" />
+                <select asp-for="ZanrID" class="form-control" asp-items="ViewBag.ZanrID"></select>
                 <span asp-validation-for="ZanrID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AvtorID" class="control-label"></label>
-                <input asp-for="AvtorID" class="form-control" />
+                <select asp-for="AvtorID" class="form-control" asp-items="ViewBag.AvtorID"></select>
                 <span asp-validation-for="AvtorID" class="text-danger"></span>
             </div>
             <div class="form-group">

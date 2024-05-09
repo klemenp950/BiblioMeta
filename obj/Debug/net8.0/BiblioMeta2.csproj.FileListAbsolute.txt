@@ -523,3 +523,7 @@ C:\BiblioMeta\obj\Debug\net8.0\refint\BiblioMeta2.dll
 C:\BiblioMeta\obj\Debug\net8.0\BiblioMeta2.pdb
 C:\BiblioMeta\obj\Debug\net8.0\BiblioMeta2.genruntimeconfig.cache
 C:\BiblioMeta\obj\Debug\net8.0\ref\BiblioMeta2.dll
+C:\BiblioMeta\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\BiblioMeta\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\BiblioMeta\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\BiblioMeta\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

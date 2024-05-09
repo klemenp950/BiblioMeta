@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BiblioMeta2.Data;
 using BiblioMeta2.Models;
+using BiblioMeta2.Filters;
 
 namespace BiblioMeta2.Controllers_Api
 {
     [Route("api/knjiga")]
     [ApiController]
+    [ApiKeyAuth]
     public class KnjigaApiController : ControllerBase
     {
         private readonly Context _context;

@@ -1,4 +1,4 @@
-namespace BiblioMeta.Models
+namespace BiblioMeta2.Models
 {
     public class Knjiga{
         public int KnjigaID {get; set;}
@@ -8,5 +8,6 @@ namespace BiblioMeta.Models
         public float Cena {get; set;}
         public int ZanrID {get; set;}
         public int AvtorID { get; set; }
+        public required String Besedilo { get; set;}
     }
 }

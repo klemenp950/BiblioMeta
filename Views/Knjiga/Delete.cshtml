@@ -4,9 +4,9 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Izbriši</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Si prepričan, da želiš izbrisati to knjigo?</h3>
 <div>
     <h4>Knjiga</h4>
     <hr />
@@ -57,7 +57,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="KnjigaID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Izbriši" class="btn btn-danger" /> |
+        <a asp-action="Index">Nazaj na seznam</a>
     </form>
 </div>

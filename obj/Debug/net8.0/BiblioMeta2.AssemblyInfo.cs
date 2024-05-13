@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BiblioMeta2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e496ccafe7bac126df6426e4c86faccc6eeadd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9fec5f5185e09fb2207d325057b84e6abe7758c")]
 [assembly: System.Reflection.AssemblyProductAttribute("BiblioMeta2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BiblioMeta2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

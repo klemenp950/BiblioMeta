@@ -8712,19 +8712,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Triton\\.nuget\\packages\\": {}
+    "C:\\Users\\kleme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Triton\\Desktop\\RIS projekt\\BiblioMeta\\BiblioMeta2.csproj",
+      "projectUniqueName": "C:\\BiblioMeta\\BiblioMeta2.csproj",
       "projectName": "BiblioMeta2",
-      "projectPath": "C:\\Users\\Triton\\Desktop\\RIS projekt\\BiblioMeta\\BiblioMeta2.csproj",
-      "packagesPath": "C:\\Users\\Triton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Triton\\Desktop\\RIS projekt\\BiblioMeta\\obj\\",
+      "projectPath": "C:\\BiblioMeta\\BiblioMeta2.csproj",
+      "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
+      "outputPath": "C:\\BiblioMeta\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Triton\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

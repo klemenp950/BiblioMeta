@@ -6,7 +6,7 @@
 
 <h1>Izbriši</h1>
 
-<h3>Si prepričan, da želiš izbrisati to knjigo?</h3>
+<h3>Si prepričan, da želiš izbrisati knjigo?</h3>
 <div>
     <h4>Knjiga</h4>
     <hr />
@@ -18,13 +18,13 @@
             @Html.DisplayFor(model => model.Naslov)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StStrani)
+            <p>Število strani</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.StStrani)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StZnakov)
+            <p>Število znakov</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.StZnakov)
@@ -36,13 +36,13 @@
             @Html.DisplayFor(model => model.Cena)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ZanrID)
+            <p>Žanr</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ZanrID)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AvtorID)
+            <p>Avtor</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AvtorID)

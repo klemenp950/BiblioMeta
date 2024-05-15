@@ -23,10 +23,33 @@ namespace BiblioMeta2.Controllers
         }
 
         // GET: Avtor
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Avtor.ToListAsync());
-        }
+        // public async Task<IActionResult> Index()
+        // {
+        //     return View(await _context.Avtor.ToListAsync());
+        // }
+        public async Task<IActionResult> Index(string sortOrder)
+{
+    ViewData["ImeSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Ime_desc" : "";
+    ViewData["PriimekSortParm"] = sortOrder == "Priimek" ? "Priimek_desc" : "Priimek";
+    var students = from s in _context.Avtor
+                   select s;
+    switch (sortOrder)
+    {
+        case "Ime_desc":
+            students = students.OrderByDescending(s => s.Ime);
+            break;
+        case "Priimek":
+            students = students.OrderBy(s => s.Priimek);
+            break;
+        case "Priimek_desc":
+            students = students.OrderByDescending(s => s.Priimek);
+            break;
+        default:
+            students = students.OrderBy(s => s.Ime);
+            break;
+    }
+    return View(await students.AsNoTracking().ToListAsync());
+}
 
         // GET: Avtor/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -12,17 +12,25 @@
 <table class="table">
     <thead>
         <tr>
+            @* <a asp-action="Index" asp-route-sortOrder="@ViewData["NaslovSortParm"]">Naslov</a>
+<a asp-action="Index" asp-route-sortOrder="@ViewData["StStraniSortParm"]">Število strani</a>
+<a asp-action="Index" asp-route-sortOrder="@ViewData["StZnakovSortParm"]">Število znakov</a>
+<a asp-action="Index" asp-route-sortOrder="@ViewData["CenaSortParm"]">Cena</a> *@
+
             <th>
-                @Html.DisplayNameFor(model => model.Naslov)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NaslovSortParm"]">Naslov</a>
             </th>
             <th>
-                Število strani
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StStraniSortParm"]">Število strani</a>
+                @* <a asp-action="Index" asp-route-sortOrder="@ViewData["StStraniSortParm"]">@Html.DisplayNameFor(model => model.StStrani)</a> *@
             </th>
             <th>
-                Število znakov
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StZnakovSortParm"]">Število znakov</a>
+                @* <a asp-action="Index" asp-route-sortOrder="@ViewData["StZnakovSortParm"]">@Html.DisplayNameFor(model => model.StZnakov)</a> *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cena)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CenaSortParm"]">Cena</a> 
+                @* <a asp-action="Index" asp-route-sortOrder="@ViewData["CenaSortParm"]">@Html.DisplayNameFor(model => model.Cena)</a> *@
             </th>
             <th>
                 Žanr

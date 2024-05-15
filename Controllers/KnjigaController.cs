@@ -24,20 +24,54 @@ namespace BiblioMeta2.Controllers
         }
 
         // GET: Knjiga
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var knjige = await _context.Knjiga.ToListAsync();
+            ViewData["NaslovSortParm"] = sortOrder == "Naslov" ? "Naslov_desc" : "Naslov";
+            ViewData["StStraniSortParm"] = sortOrder == "StStrani" ? "StStrani_desc" : "StStrani";
+            ViewData["StZnakovSortParm"] = sortOrder == "StZnakov" ? "StZnakov_desc" : "StZnakov";
+            ViewData["CenaSortParm"] = sortOrder == "Cena" ? "Cena_desc" : "Cena";
 
-            var knjigeViewModel = new List<KnjigaViewModel>(); // Ustvarite novo kolekcijo pogledov
+            var knjigeQuery = from s in _context.Knjiga
+                            select s;
+
+            switch (sortOrder)
+            {
+                case "Naslov_desc":
+                    knjigeQuery = knjigeQuery.OrderByDescending(s => s.Naslov);
+                    break;
+                case "StStrani":
+                    knjigeQuery = knjigeQuery.OrderBy(s => s.StStrani);
+                    break;
+                case "StStrani_desc":
+                    knjigeQuery = knjigeQuery.OrderByDescending(s => s.StStrani);
+                    break;
+                case "StZnakov":
+                    knjigeQuery = knjigeQuery.OrderBy(s => s.StZnakov);
+                    break;
+                case "StZnakov_desc":
+                    knjigeQuery = knjigeQuery.OrderByDescending(s => s.StZnakov);
+                    break;
+                case "Cena":
+                    knjigeQuery = knjigeQuery.OrderBy(s => s.Cena);
+                    break;
+                case "Cena_desc":
+                    knjigeQuery = knjigeQuery.OrderByDescending(s => s.Cena);
+                    break;
+                default:
+                    knjigeQuery = knjigeQuery.OrderBy(s => s.Naslov);
+                    break;
+            }
+
+            var knjige = await knjigeQuery.ToListAsync();
+            var knjigaViewModels = new List<KnjigaViewModel>();
 
             foreach (var knjiga in knjige)
             {
-                // Pridobite ime avtorja za vsako knjigo glede na AvtorID
                 var avtor = await _context.Avtor.FirstOrDefaultAsync(a => a.AvtorID == knjiga.AvtorID);
                 var zanr = await _context.Zanr.FirstOrDefaultAsync(a => a.ZanrID == knjiga.ZanrID);
                 if (avtor != null && zanr != null)
                 {
-                    knjigeViewModel.Add(new KnjigaViewModel
+                    knjigaViewModels.Add(new KnjigaViewModel
                     {
                         KnjigaID = knjiga.KnjigaID,
                         Naslov = knjiga.Naslov,
@@ -45,15 +79,16 @@ namespace BiblioMeta2.Controllers
                         StStrani = knjiga.StStrani,
                         Cena = knjiga.Cena,
                         ZanrID = knjiga.ZanrID,
-                        AvtorIme = avtor.Ime + " " + avtor.Priimek, 
+                        AvtorIme = avtor.Ime + " " + avtor.Priimek,
                         Zanr = zanr.ImeZanra
                     });
                 }
-
             }
 
-            return View(knjigeViewModel);
+            return View(knjigaViewModels);
         }
+
+
 
         // GET: Knjiga/Details/5
         public async Task<IActionResult> Details(int? id)

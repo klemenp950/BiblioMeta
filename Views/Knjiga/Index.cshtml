@@ -9,6 +9,15 @@
 <p>
     <a asp-action="Create">Dodaj knjigo</a>
 </p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Poišči knjigo: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Iskanje" class="btn btn-default"/> |
+            <a asp-action="Index">Prikaži vse knjige</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>

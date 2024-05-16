@@ -23,9 +23,25 @@ namespace BiblioMeta2.Controllers
         }
 
         // GET: Zanr
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Zanr.ToListAsync());
+            ViewData["ZanrSortParam"] = sortOrder == "Zanr" ? "Zanr_desc" : "Zanr";
+            var zanrQuery = from s in _context.Zanr
+                            select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                zanrQuery = zanrQuery.Where(s => s.ImeZanra.Contains(searchString));
+            }
+
+            switch(sortOrder){
+                case "Zanr":
+                    zanrQuery = zanrQuery.OrderBy(s => s.ImeZanra);
+                    break;
+                case "Zanr_desc":
+                    zanrQuery = zanrQuery.OrderByDescending(s => s.ImeZanra);
+                    break;
+            }
+            return View(await zanrQuery.AsNoTracking().ToListAsync());
         }
 
         // GET: Zanr/Details/5

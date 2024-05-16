@@ -27,27 +27,30 @@ namespace BiblioMeta2.Controllers
         // {
         //     return View(await _context.Avtor.ToListAsync());
         // }
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
 {
-    ViewData["ImeSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Ime_desc" : "";
-    ViewData["PriimekSortParm"] = sortOrder == "Priimek" ? "Priimek_desc" : "Priimek";
-    var students = from s in _context.Avtor
-                   select s;
-    switch (sortOrder)
-    {
-        case "Ime_desc":
-            students = students.OrderByDescending(s => s.Ime);
-            break;
-        case "Priimek":
-            students = students.OrderBy(s => s.Priimek);
-            break;
-        case "Priimek_desc":
-            students = students.OrderByDescending(s => s.Priimek);
-            break;
-        default:
-            students = students.OrderBy(s => s.Ime);
-            break;
-    }
+            ViewData["ImeSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Ime_desc" : "";
+            ViewData["PriimekSortParm"] = sortOrder == "Priimek" ? "Priimek_desc" : "Priimek";
+            var students = from s in _context.Avtor select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Ime.Contains(searchString) || s.Priimek.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Ime_desc":
+                    students = students.OrderByDescending(s => s.Ime);
+                    break;
+                case "Priimek":
+                    students = students.OrderBy(s => s.Priimek);
+                    break;
+                case "Priimek_desc":
+                    students = students.OrderByDescending(s => s.Priimek);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Ime);
+                    break;
+            }
     return View(await students.AsNoTracking().ToListAsync());
 }
 

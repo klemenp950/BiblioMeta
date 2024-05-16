@@ -24,7 +24,7 @@ namespace BiblioMeta2.Controllers
         }
 
         // GET: Knjiga
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["NaslovSortParm"] = sortOrder == "Naslov" ? "Naslov_desc" : "Naslov";
             ViewData["StStraniSortParm"] = sortOrder == "StStrani" ? "StStrani_desc" : "StStrani";
@@ -33,6 +33,11 @@ namespace BiblioMeta2.Controllers
 
             var knjigeQuery = from s in _context.Knjiga
                             select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                knjigeQuery = knjigeQuery.Where(s => s.Naslov.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
@@ -127,7 +132,7 @@ namespace BiblioMeta2.Controllers
                 // Izračunaj število znakov in strani iz besedila knjige
                 knjiga.StZnakov = knjiga.Besedilo.Length;
                 knjiga.StStrani = (int)Math.Ceiling((double)knjiga.StZnakov / 400); // Predpostavka: 400 znakov na stran
-                knjiga.Cena = (float)(knjiga.StStrani * 0.01);
+                knjiga.Cena = (float)((knjiga.StStrani * 0.01) + 1);
 
                 _context.Add(knjiga);
                 await _context.SaveChangesAsync();
